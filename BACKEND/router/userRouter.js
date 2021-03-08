@@ -1,14 +1,15 @@
 const { Router } = require('express');
-const { createRecord } = require('../controller/recordsController');
+const { createRecord, getData } = require('../controller/recordsController');
 
 function UserRouter() {
-    const router = Router();
+  const router = Router();
 
-    router
-        .route('/')
-        .post(createRecord);
+  router
+    .route('/')
+    .post(createRecord)
+    .get(getData);
 
-    return router
+  return router;
 }
 
 module.exports = UserRouter();
