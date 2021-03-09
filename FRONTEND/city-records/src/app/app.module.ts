@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeContentComponent } from './home-content/home-content.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -21,7 +22,8 @@ import { HomeContentComponent } from './home-content/home-content.component';
     HeaderComponent,
     MapComponent,
     HomeFormComponent,
-    HomeContentComponent
+    HomeContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
