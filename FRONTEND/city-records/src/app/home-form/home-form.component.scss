@@ -6,7 +6,16 @@
   margin-top: 20px;
   margin-bottom: 20px;
 
-  .form__input{
+  .form__first-row,
+  .form__second-row {
+    width: 100%;
+  }
+
+  .form__input {
+    text-align: center;
+  }
+
+  .input__field{
     width: 80%;
   }
 
@@ -18,11 +27,23 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .form__input{
-    margin-left: 10px;
-    margin-right: 10px;
 
-    .input__field{
+  .form{
+    margin: auto;
+    margin-top: 10px;
+    width: 80%;
+  }
+
+  .form__first-row,
+  .form__second-row {
+    display: flex;
+  }
+
+  .form__input {
+    width: 25%;
+    margin: 5px;
+
+    .input__field {
       width: 100%;
     }
   }
@@ -31,19 +52,13 @@
     margin-top: 5px;
   }
 
-  .form__left{
+
+.form__left{
     margin-left: 0px;
   }
 
   .form__rigth{
     margin-right: 0px;
-  }
-
-  .form__first-row,
-  .form__second-row{
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
   }
 }
 
