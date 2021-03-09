@@ -14,14 +14,42 @@
   background: #ffffff;
 }
 
-.content-container .content-container__text-highlight {
+.content-container .content-container__text-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  /* Treballar aqui dins */
+}
+
+.content-container .content-container__text-section .text-section__text-highlight {
   width: 80%;
   font-weight: bolder;
   font-size: 25px;
   line-height: 40px;
 }
 
-.content-container .content-container__content {
+.content-container .content-container__text-section .text-section__paragraphs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-container .content-container__text-section .text-section__paragraphs .paragraphs__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,13 +61,13 @@
   margin-top: 10px;
 }
 
-.content-container .content-container__content .content__icon {
+.content-container .content-container__text-section .text-section__paragraphs .paragraphs__content .content__icon {
   width: 32px;
   height: 32px;
   margin-bottom: 5px;
 }
 
-.content-container .content-container__content .content___text {
+.content-container .content-container__text-section .text-section__paragraphs .paragraphs__content .content___text {
   font-size: 20px;
   line-height: 25px;
 }
@@ -48,5 +76,33 @@
   width: 80%;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  .content-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  .content-container .text-section__paragraphs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .content-container .content-container__image {
+    width: 40%;
+    margin-right: 3%;
+  }
 }
 /*# sourceMappingURL=home-content.component.css.map */
