@@ -11,10 +11,39 @@
   }
 
   .form__submit{
-    width: 80%;
     height: 50px;
     color:#ffffff;
     background-color: #000000;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .form__input{
+    margin-left: 10px;
+    margin-right: 10px;
+
+    .input__field{
+      width: 100%;
+    }
+  }
+
+  .form__submit{
+    margin-top: 5px;
+  }
+
+  .form__left{
+    margin-left: 0px;
+  }
+
+  .form__rigth{
+    margin-right: 0px;
+  }
+
+  .form__first-row,
+  .form__second-row{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
