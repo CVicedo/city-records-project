@@ -1,0 +1,27 @@
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form .form__input {
+  width: 80%;
+}
+
+.form .form__submit {
+  width: 80%;
+  height: 50px;
+  color: #ffffff;
+  background-color: #000000;
+}
+/*# sourceMappingURL=home-form.component.css.map */

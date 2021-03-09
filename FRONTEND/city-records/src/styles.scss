@@ -1,3 +1,38 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$city-records-primary: mat-palette($mat-indigo);
+$city-records-accent: mat-palette($mat-gray, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$city-records-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$city-records-theme: mat-light-theme((
+  color: (
+    primary: $city-records-primary,
+    accent: $city-records-accent,
+    warn: $city-records-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($city-records-theme);
+
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block;}
 body { line-height: 1;}
@@ -5,3 +40,6 @@ ol,ul { list-style: none;}
 blockquote,q { quotes: none;}
 blockquote:before,blockquote:after,q:before,q:after { content: ''; content: none;}
 table { border-collapse: collapse; border-spacing: 0;}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
