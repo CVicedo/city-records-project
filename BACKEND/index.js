@@ -6,7 +6,7 @@ const debug = require('debug')('app');
 const morgan = require('morgan');
 const cors = require('cors');
 
-const UserRouter = require('./router/userRouter');
+const UserRouter = require('./src/router/userRouter');
 
 const app = express();
 const port = process.env.PORT || 5000;
