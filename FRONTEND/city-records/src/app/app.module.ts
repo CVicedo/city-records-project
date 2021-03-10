@@ -36,7 +36,7 @@ import { FooterComponent } from './footer/footer.component'
     MatButtonModule,
     GoogleMapsModule,
     AgmCoreModule.forRoot({
-      apiKey: environment.apiMapsKey
+      apiKey: environment.API_MAPS_KEY
     })
   ],
   providers: [],

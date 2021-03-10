@@ -1,14 +1,17 @@
 agm-map{
-  height: 30vw;;
+  height: 80vw;;
 }
+
 .map-container{
   margin-top: -51px;
-  z-index: 0;
 }
 
 @media only screen and (min-width: 600px){
+
+  agm-map{
+    height: 30vw;
+  }
   .map-container{
     max-height: 30vw;
-
   }
 }

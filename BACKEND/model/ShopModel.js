@@ -5,6 +5,10 @@ const ShopModel = new Schema({
   adress: String,
   ownerName: String,
   email: String,
+  coordinates: {
+    latitude: Number,
+    longitude: Number
+  },
   records: [{
     record: { type: Schema.Types.ObjectId },
     stock: Number
