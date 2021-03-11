@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <th>
+      <input type="checkbox" />
+    </th>
+    <th></th>
+    <th>Artist</th>
+    <th>Title</th>
+    <th>Reference</th>
+    <th>Format</th>
+    <th>Media Condition</th>
+    <th>Sleeve Condition</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let record of records | async">
+    <td><input type="checkbox" /></td>
+    <th>
+      <img
+        src="../../../../../assets/images/edit-table-icon.svg"
+        alt="Edit table icon"
+      />
+    </th>
+    <td>{{ record.artist }}</td>
+    <td>{{ record.title }}</td>
+    <td>{{ record.reference }}</td>
+    <td>{{ record.format }}</td>
+    <td>{{ record.mediaCondition }}</td>
+    <td>{{ record.sleeveCondition }}</td>
+    <td>21.05 €</td>
+  </tr>
+</table>

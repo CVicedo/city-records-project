@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   API_MAPS_KEY: 'AIzaSyCjC2h7B-zlM358R8e86IPUqKkm7LrQEzI',
-  URL_FETCH_STORES: 'http://localhost:5000/api/records/stores'
+  URL_FETCH_STORES: 'http://localhost:5000/api/records/stores',
+  URL_FETCH_RECORDS: 'http://localhost:5000/api/records'
 }
 
 /*
