@@ -1,19 +1,11 @@
 <div class="map-container">
   <agm-map [latitude]="latitude" [longitude]="longitude">
-    <agm-marker [latitude]="41.39888" [longitude]="2.19681">
-      <agm-info-window>Ultra Local Records</agm-info-window>
-    </agm-marker>
-
-    <agm-marker [latitude]="41.38457" [longitude]="2.16949">
-      <agm-info-window>Daily Records</agm-info-window>
-    </agm-marker>
-
-    <agm-marker [latitude]="41.38475" [longitude]="2.16944">
-      <agm-info-window>Discos Revolver</agm-info-window>
-    </agm-marker>
-
-    <agm-marker [latitude]="41.38033" [longitude]="2.16835">
-      <agm-info-window>Wah Wah Records</agm-info-window>
+    <agm-marker
+      *ngFor="let store of stores | async"
+      [latitude]="store.coordinates.latitude"
+      [longitude]="store.coordinates.longitude"
+    >
+      <agm-info-window>{{ store.storeName }}</agm-info-window>
     </agm-marker>
   </agm-map>
 </div>
