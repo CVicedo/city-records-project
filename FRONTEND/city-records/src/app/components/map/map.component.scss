@@ -4,6 +4,11 @@ agm-map{
 
 .map-container{
   margin-top: -51px;
+
+  .storeName {
+    font-size: 110%;
+    font-weight: bold;
+  }
 }
 
 @media only screen and (min-width: 600px){
