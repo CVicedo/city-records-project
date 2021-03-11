@@ -1,0 +1,14 @@
+<div class="map-container">
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="11">
+    <agm-marker
+      *ngFor="let store of stores | async"
+      [latitude]="store.coordinates.latitude"
+      [longitude]="store.coordinates.longitude"
+    >
+      <agm-info-window
+        ><span class="storeName">{{ store.storeName }}</span
+        ><br />{{ store.adress }}</agm-info-window
+      >
+    </agm-marker>
+  </agm-map>
+</div>

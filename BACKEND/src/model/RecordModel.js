@@ -9,4 +9,4 @@ const RecordModel = new Schema({
   sleeveCondition: String
 });
 
-module.exports = model('Type', RecordModel);
+module.exports = model('Record', RecordModel);

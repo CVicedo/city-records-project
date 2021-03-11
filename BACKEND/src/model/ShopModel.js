@@ -8,11 +8,11 @@ const ShopModel = new Schema({
   coordinates: {
     latitude: Number,
     longitude: Number
-  },
+  }/* ,
   records: [{
     record: { type: Schema.Types.ObjectId },
     stock: Number
-  }]
+  }] */
 });
 
-module.exports = model('Type', ShopModel);
+module.exports = model('Shop', ShopModel);
