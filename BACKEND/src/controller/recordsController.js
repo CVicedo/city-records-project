@@ -14,7 +14,7 @@ function getData(req, res) {
   RecordModel.find(query, (findError, recordsArray) => {
     if (findError) {
       res.status(500);
-      res.send('Error finding records');
+      res.send('City Records says: Error finding records');
     } else {
       res.json(recordsArray);
     }

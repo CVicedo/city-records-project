@@ -6,7 +6,7 @@ function getStores(req, res) {
   Store.find(query, (findError, storesArray) => {
     if (findError) {
       res.status(500);
-      res.send('Error finding stores');
+      res.send('City Records says: Error finding stores');
     } else {
       res.json(storesArray);
     }
