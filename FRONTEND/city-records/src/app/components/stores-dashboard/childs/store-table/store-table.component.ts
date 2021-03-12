@@ -8,7 +8,7 @@ import { RecordsService } from '../../../../core/services/records.service'
 })
 
 export class StoreTableComponent implements OnInit {
-  columnsToDisplay: string[] = ['artist', 'title', 'reference', 'format', 'mediaCondition', 'sleeveCondition'];
+  columnsToDisplay: string[] = ['check', 'edit', 'artist', 'title', 'reference', 'format', 'mediaCondition', 'sleeveCondition', 'copies', 'price'];
   records = this.RecordsService.getRecords()
 
   // eslint-disable-next-line no-useless-constructor
