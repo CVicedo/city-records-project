@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select'
 import { MatButtonModule } from '@angular/material/button'
 import { HttpClientModule } from '@angular/common/http'
+import { MatTableModule } from '@angular/material/table'
+import { MatPaginatorModule } from '@angular/material/paginator'
 
 import { environment } from '../environments/environment'
 import { AppRoutingModule } from './app-routing.module'
@@ -45,7 +47,9 @@ import { StoreTableComponent } from './components/stores-dashboard/childs/store-
     AgmCoreModule.forRoot({
       apiKey: environment.API_MAPS_KEY
     }),
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
