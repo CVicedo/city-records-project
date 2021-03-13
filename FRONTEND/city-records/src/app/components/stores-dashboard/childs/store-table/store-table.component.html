@@ -1,7 +1,9 @@
 <table mat-table [dataSource]="records" class="mat-elevation-z8 table">
   <ng-container matColumnDef="check">
     <th mat-header-cell *matHeaderCellDef><input type="checkbox" /></th>
-    <td mat-cell *matCellDef><input type="checkbox" /></td>
+    <td mat-cell *matCellDef>
+      <input type="checkbox" />
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="edit">
@@ -57,5 +59,9 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-  <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+  <tr
+    mat-row
+    *matRowDef="let myRowData; columns: columnsToDisplay"
+    (click)="onRowClicked(myRowData)"
+  ></tr>
 </table>
