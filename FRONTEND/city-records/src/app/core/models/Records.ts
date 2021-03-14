@@ -1,4 +1,4 @@
-export interface Record {
+export interface RecordList {
   _id:string,
   artist: string,
   title: string,

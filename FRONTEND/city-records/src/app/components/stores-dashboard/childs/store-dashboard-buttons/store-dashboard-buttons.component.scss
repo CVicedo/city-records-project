@@ -1,0 +1,23 @@
+
+.store-dashboard-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+ .store-dashboard-buttons__left-buttons{
+   display: flex;
+   justify-content: space-between;
+   width: 25%;
+ }
+
+ .store-dashboard-buttons__rigth-buttons {
+   display: flex;
+   justify-content: space-between;
+   width: 40%;
+ }
+
+}
+

@@ -4,10 +4,13 @@ import { HttpClientModule } from '@angular/common/http'
 import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatSortModule } from '@angular/material/sort'
+import { MatButtonModule } from '@angular/material/button'
 
 import { StoresDashboardComponent } from '../stores-dashboard/stores-dashboard.component'
 import { StoreTableComponent } from './childs/store-table/store-table.component'
 import { StoreDashboardButtonsComponent } from './childs/store-dashboard-buttons/store-dashboard-buttons.component'
+import { AppRoutingModule } from 'src/app/app-routing.module'
+import { MatFormFieldModule } from '@angular/material/form-field'
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { StoreDashboardButtonsComponent } from './childs/store-dashboard-buttons
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatButtonModule,
+    AppRoutingModule,
+    MatFormFieldModule
   ]
 })
 export class StoresDashboardModule { }

@@ -9,6 +9,7 @@ import { RecordsService } from '../../../../core/services/records.service'
 
 export class StoreTableComponent implements OnInit {
   columnsToDisplay: string[] = ['check', 'edit', 'artist', 'title', 'reference', 'format', 'mediaCondition', 'sleeveCondition', 'copies', 'price'];
+
   records = this.RecordsService.getRecords()
 
   onRowClicked (row) {
@@ -19,6 +20,6 @@ export class StoreTableComponent implements OnInit {
   constructor (private RecordsService: RecordsService) { }
 
   ngOnInit (): void {
-    this.RecordsService.getRecords()
+
   }
 }
