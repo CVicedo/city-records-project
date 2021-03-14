@@ -25,13 +25,13 @@ describe('AppComponent', () => {
   it('should have as title \'city-records\'', () => {
     const fixture = TestBed.createComponent(AppComponent)
     const app = fixture.componentInstance
-    expect(app.title).toEqual('city-records')
+    expect(app.title).toEqual('City Records')
   })
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent)
     fixture.detectChanges()
     const compiled = fixture.nativeElement
-    expect(compiled.querySelector('.content span').textContent).toContain('city-records app is running!')
+    expect(compiled.getElementsByClassName('super-header__text').textContent).toContain('Search online, buy local')
   })
 })

@@ -1,25 +1,26 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 
-import { StoreTableComponent } from './store-table.component';
+import { StoreTableComponent } from './store-table.component'
 
 describe('StoreTableComponent', () => {
-  let component: StoreTableComponent;
-  let fixture: ComponentFixture<StoreTableComponent>;
+  let component: StoreTableComponent
+  let fixture: ComponentFixture<StoreTableComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StoreTableComponent ]
+      declarations: [StoreTableComponent], imports: [HttpClientTestingModule]
     })
-    .compileComponents();
-  });
+      .compileComponents()
+  })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StoreTableComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(StoreTableComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

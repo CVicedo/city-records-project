@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core'
-import { Record } from '../models/Records'
+import { RecordList } from '../models/Records'
 import { HttpClient } from '@angular/common/http'
 import { environment } from '../../../environments/environment'
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecordsService {
-  getRecords () {
-    return this.http.get<Record[]>(environment.URL_FETCH_RECORDS)
+  getRecords (): Observable<RecordList[]> {
+    return this.http.get<RecordList[]>(environment.URL_FETCH_RECORDS)
   }
 
   // eslint-disable-next-line no-useless-constructor
