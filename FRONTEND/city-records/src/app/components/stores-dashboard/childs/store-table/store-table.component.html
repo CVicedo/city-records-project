@@ -1,10 +1,9 @@
-<!-- <mat-form-field>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input />
-</mat-form-field> -->
 <div class="mat-elevation-z8 table">
+  <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input />
   <table mat-table [dataSource]="dataSource" matSort>
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
+      <!-- Checkbox header -->
       <th mat-header-cell *matHeaderCellDef>
         <div class="table__cell">
           <mat-checkbox
@@ -16,6 +15,8 @@
           </mat-checkbox>
         </div>
       </th>
+
+      <!-- Checkbox regular cell -->
       <td mat-cell *matCellDef="let row">
         <div class="table__cell">
           <mat-checkbox
@@ -29,6 +30,7 @@
       </td>
     </ng-container>
 
+    <!-- Edit element column -->
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef>
@@ -39,6 +41,7 @@
       </td>
     </ng-container>
 
+    <!-- Artist Column -->
     <ng-container matColumnDef="artist">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Artist</th>
       <td mat-cell *matCellDef="let record">
@@ -46,6 +49,7 @@
       </td>
     </ng-container>
 
+    <!-- Title column -->
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
       <td mat-cell *matCellDef="let record">
@@ -53,6 +57,7 @@
       </td>
     </ng-container>
 
+    <!-- Reference column -->
     <ng-container matColumnDef="reference">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Reference</th>
       <td mat-cell *matCellDef="let record">
@@ -60,6 +65,7 @@
       </td>
     </ng-container>
 
+    <!-- Format column -->
     <ng-container matColumnDef="format">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Format</th>
       <td mat-cell *matCellDef="let record">
@@ -67,6 +73,7 @@
       </td>
     </ng-container>
 
+    <!-- Media condition column -->
     <ng-container matColumnDef="mediaCondition">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Media Condition</th>
       <td mat-cell *matCellDef="let record">
@@ -74,6 +81,7 @@
       </td>
     </ng-container>
 
+    <!-- Sleeve condition column -->
     <ng-container matColumnDef="sleeveCondition">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
         Sleeve Condition
@@ -83,27 +91,33 @@
       </td>
     </ng-container>
 
+    <!-- Copies number column -->
     <ng-container matColumnDef="copies">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Copies</th>
       <td mat-cell *matCellDef><div class="table__cell">5</div></td>
     </ng-container>
 
+    <!-- Price column -->
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
       <td mat-cell *matCellDef><div class="table__cell">25.34 €</div></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+
+    <!-- When a column is clicked the console logs its data -->
     <tr
       mat-row
       *matRowDef="let myRowData; columns: columnsToDisplay"
       (click)="onRowClicked(myRowData)"
     ></tr>
-    <!--     <tr class="mat-row" *matNoDataRow>
+    <tr class="mat-row" *matNoDataRow>
       <td class="mat-cell" colspan="4">
         No data matching the filter "{{ input.value }}"
       </td>
-    </tr> -->
+    </tr>
   </table>
+
+  <!-- Pagination -->
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>

@@ -42,15 +42,17 @@ export class StoreTableComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  /*  applyFilter (event: Event) {
+  /* Filters row taking all the row data as a string */
+  applyFilter (event: Event) {
     const filterValue = (event.target as HTMLInputElement).value
     this.dataSource.filter = filterValue.trim().toLowerCase()
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage()
     }
-  } */
+  }
 
+  /* Displays in console row info when clicked */
   onRowClicked (row) {
     console.log('Row Clicked: ', row)
   }
