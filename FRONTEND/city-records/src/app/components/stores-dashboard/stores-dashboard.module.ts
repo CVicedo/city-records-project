@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core'
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { HttpClientModule } from '@angular/common/http'
 import { MatTableModule } from '@angular/material/table'
@@ -11,6 +11,7 @@ import { StoreTableComponent } from './childs/store-table/store-table.component'
 import { StoreDashboardButtonsComponent } from './childs/store-dashboard-buttons/store-dashboard-buttons.component'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,10 @@ import { MatFormFieldModule } from '@angular/material/form-field'
     MatSortModule,
     MatButtonModule,
     AppRoutingModule,
-    MatFormFieldModule
-  ]
+    MatFormFieldModule,
+    MatCheckboxModule
+
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StoresDashboardModule { }

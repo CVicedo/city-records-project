@@ -1,0 +1,93 @@
+table{
+margin: auto;
+table-layout: fixed;
+width: 80%;
+border-collapse: collapse;
+margin-bottom: 3%;
+
+  th{
+    font-weight: bold;
+  }
+
+  th,
+  td{
+    text-align: left;
+    margin: 0.3em;
+    padding: 0.2%;
+    border-bottom: 1px solid #000000;
+  }
+
+  tr:hover{
+    background: #ccc;
+  }
+
+  .table__cell-checkbox {
+    width:20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    height: auto;
+  }
+
+  .table__cell-edit {
+    width: 25px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    height: auto;
+
+    .cell-edit__icon{
+
+    }
+  }
+
+  .table__cell-artist {
+    width:20%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    height: auto;
+  }
+
+  .table__cell-title {
+    width:30%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    height: auto;
+  }
+
+  .table__cell-reference {
+    width:100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    height: auto;
+  }
+
+  .table__cell-format {
+    width:100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    height: auto;
+  }
+
+  .table__cell-media-condition {
+    width:100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    height: auto;
+  }
+
+  .table__cell-sleeve-condition {
+    width:100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    height: auto;
+  }
+
+  .table__cell-price {
+    width:100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    height: auto;
+  }
+
+}
+
+
