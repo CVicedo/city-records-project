@@ -11,6 +11,7 @@ import { StoreTableComponent } from './childs/store-table/store-table.component'
 import { StoreDashboardButtonsComponent } from './childs/store-dashboard-buttons/store-dashboard-buttons.component'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatFormFieldModule } from '@angular/material/form-field'
     MatSortModule,
     MatButtonModule,
     AppRoutingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
