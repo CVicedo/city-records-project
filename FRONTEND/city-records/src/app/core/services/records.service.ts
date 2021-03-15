@@ -12,6 +12,5 @@ export class RecordsService {
     return this.http.get<RecordList[]>(environment.URL_FETCH_RECORDS)
   }
 
-  // eslint-disable-next-line no-useless-constructor
   constructor (private http: HttpClient) { }
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core'
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { HttpClientModule } from '@angular/common/http'
 import { MatTableModule } from '@angular/material/table'
@@ -27,6 +27,8 @@ import { MatFormFieldModule } from '@angular/material/form-field'
     MatButtonModule,
     AppRoutingModule,
     MatFormFieldModule
-  ]
+
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StoresDashboardModule { }

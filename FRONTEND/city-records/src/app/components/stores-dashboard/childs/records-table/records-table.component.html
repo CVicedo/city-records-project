@@ -1,0 +1,50 @@
+<div style="text-align: center">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Title</th>
+        <th scope="col">Reference</th>
+        <th scope="col">Format</th>
+        <th scope="col">Media Condition</th>
+        <th scope="col">Sleeve Condition</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of records$ | paginate: config">
+        <td><input type="checkbox" /></td>
+        <td>
+          <img
+            src="../../../../../assets/images/edit-table-icon.svg"
+            alt="Edit table icon"
+            class="cell-edit__icon"
+          />
+        </td>
+        <td>
+          {{ record.artist }}
+        </td>
+        <td>
+          {{ record.title }}
+        </td>
+        <td>
+          {{ record.reference }}
+        </td>
+        <td>
+          {{ record.format }}
+        </td>
+        <td>
+          {{ record.mediaCondition }}
+        </td>
+        <td>
+          {{ record.sleeveCondition }}
+        </td>
+        <td>21.05 €</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+</div>
