@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { createRecord, getData } = require('../controller/recordsController');
+const { createRecord, getData, deleteRecordByReferenceParam } = require('../controller/recordsController');
 const { getStores, createStore } = require('../controller/storesController');
 
 function UserRouter() {
@@ -14,6 +14,10 @@ function UserRouter() {
     .route('/stores')
     .get(getStores)
     .post(createStore);
+
+  router
+    .route('/:recordParam')
+    .delete(deleteRecordByReferenceParam);
 
   return router;
 }

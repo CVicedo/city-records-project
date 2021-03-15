@@ -1,4 +1,17 @@
 <div>
+  <!-- Això és la part del filter -->
+  <!--  <input
+    type="text"
+    name="filterTable"
+    id="filterTable"
+    [(ngModel)]="filterTerm"
+    autocomplete="off"
+    (ngModelChange)="filterRecords(filterTerm)"
+  /> -->
+
+  <div *ngFor="let record of recordFound">
+    {{ record.artist }}
+  </div>
   <table mat-table [dataSource]="records" class="mat-elevation-z8 table">
     <ng-container matColumnDef="check">
       <th mat-header-cell *matHeaderCellDef><input type="checkbox" /></th>

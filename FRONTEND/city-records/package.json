@@ -23,6 +23,9 @@
     "@angular/platform-browser": "~11.2.4",
     "@angular/platform-browser-dynamic": "~11.2.4",
     "@angular/router": "~11.2.4",
+    "devextreme": "20.2.5",
+    "devextreme-angular": "20.2.5",
+    "devextreme-schematics": "^1.2.10",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
@@ -37,6 +40,8 @@
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
     "codelyzer": "^6.0.0",
+    "devextreme-cli": "latest",
+    "devextreme-themebuilder": "^20.2.4",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-standard": "^16.0.2",

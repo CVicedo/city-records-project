@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  margin-top: 3%;
+
+  .input__field {
+    width: 3%;
+    min-width: 75px;
+    align-self: flex-end;
+    margin-bottom: 1%;
+    cursor: pointer;
+  }
+}
