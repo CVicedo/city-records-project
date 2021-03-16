@@ -6,7 +6,10 @@ const RecordModel = new Schema({
   reference: String,
   format: String,
   mediaCondition: String,
-  sleeveCondition: String
+  sleeveCondition: String,
+  shops: [
+    { type: Schema.Types.ObjectId, ref: 'Shop' }
+  ]
 });
 
 module.exports = model('Record', RecordModel);
