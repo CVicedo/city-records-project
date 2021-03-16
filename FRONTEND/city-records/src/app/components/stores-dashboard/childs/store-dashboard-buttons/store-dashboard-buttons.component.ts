@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./store-dashboard-buttons.component.scss']
 })
 export class StoreDashboardButtonsComponent implements OnInit {
-  // eslint-disable-next-line no-useless-constructor
   constructor () { }
 
   ngOnInit (): void {

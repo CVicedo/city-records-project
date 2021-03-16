@@ -1,5 +1,8 @@
 <div class="mat-elevation-z8 table">
-  <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input />
+  <!-- Filter -->
+
+  <input matInput placeholder="Filter" (keyup)="applyFilter($event)" #input />
+
   <table mat-table [dataSource]="dataSource" matSort>
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
