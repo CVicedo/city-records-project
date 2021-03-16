@@ -1,3 +1,5 @@
+const RecordModel = require('../model/RecordModel');
+const ShopModel = require('../model/ShopModel');
 const Store = require('../model/ShopModel');
 
 function getStores(req, res) {
@@ -21,6 +23,18 @@ function createStore(req, res) {
   return res.json(newStore);
 }
 
+function getStoresWithrecords(req, res) {
+  return ShopModel.findById(req.params.shopId)
+    .populate('records.record').exec((err, shop) => {
+      if (err) {
+        res.status(500);
+        res.send('Error');
+      } else {
+        res.json(shop);
+      }
+    });
+}
+
 module.exports = {
-  getStores, createStore
+  getStores, createStore, getStoresWithrecords
 };
