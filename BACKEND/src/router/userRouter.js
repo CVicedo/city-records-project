@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { createRecord, getData } = require('../controller/recordsController');
+const { createRecord, getData, getRecordsWithStores } = require('../controller/recordsController');
 const { getStores, createStore, getStoresWithrecords } = require('../controller/storesController');
 
 function UserRouter() {
@@ -9,6 +9,10 @@ function UserRouter() {
     .route('/')
     .post(createRecord)
     .get(getData);
+
+  router
+    .route('/:recordId')
+    .get(getRecordsWithStores);
 
   router
     .route('/stores')

@@ -21,6 +21,18 @@ function getData(req, res) {
   });
 }
 
+function getRecordsWithStores(req, res) {
+  return RecordModel.findById(req.params.recordId)
+    .populate('shops').exec((err, record) => {
+      if (err) {
+        res.status(500);
+        res.send('Error found');
+      } else {
+        res.json(record);
+      }
+    });
+}
+
 module.exports = {
-  createRecord, getData
+  createRecord, getData, getRecordsWithStores
 };

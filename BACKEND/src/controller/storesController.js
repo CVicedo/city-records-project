@@ -1,4 +1,3 @@
-const RecordModel = require('../model/RecordModel');
 const ShopModel = require('../model/ShopModel');
 const Store = require('../model/ShopModel');
 
