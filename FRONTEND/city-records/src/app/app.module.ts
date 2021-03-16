@@ -15,6 +15,7 @@ import { HowItWorksComponent } from './components/info/how-it-works/how-it-works
 import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatSortModule } from '@angular/material/sort'
+import { MatButtonModule } from '@angular/material/button'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatSortModule } from '@angular/material/sort'
     StoresDashboardModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatButtonModule
 
   ],
   providers: [],

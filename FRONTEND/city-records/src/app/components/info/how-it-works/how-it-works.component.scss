@@ -1,0 +1,16 @@
+.how-it-works-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  .container__back-button{
+    align-self: flex-end;
+    color:#ffffff;
+    background-color: #000000;
+    width: 5%;
+    margin-bottom: 2%;
+  }
+
+}
