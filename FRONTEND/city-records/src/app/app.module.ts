@@ -40,7 +40,6 @@ import { MatFormFieldModule } from '@angular/material/form-field'
     MatSortModule,
     MatFormFieldModule,
     MatButtonModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
