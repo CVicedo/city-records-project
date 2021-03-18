@@ -1,34 +1,83 @@
-<form action="get" class="form">
+<form class="form">
   <div class="form__first-row">
-    <div class="form__input form__left">
-      <mat-form-field appearance="outline" class="input__field">
-        <mat-label>Artist</mat-label>
-        <input matInput placeholder="Artist" />
-      </mat-form-field>
-    </div>
+    <input
+      matInput
+      placeholder="Filter"
+      (keyup)="applyFilter($event)"
+      (focus)="displayTable()"
+      class="table__filterInput"
+      #input
+    />
+    <div class="mat-elevation-z8 table">
+      <!-- Filter -->
+      <!-- Table -->
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        *ngIf="showTable"
+        (click)="hideTable()"
+        matSort
+      >
+        <!-- Artist Column -->
+        <ng-container matColumnDef="artist">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Artist</th>
+          <td mat-cell *matCellDef="let record">
+            <div class="table__cell">{{ record.artist }}</div>
+          </td>
+        </ng-container>
 
-    <div class="form__input">
-      <mat-form-field appearance="outline" class="input__field">
-        <mat-label>Title</mat-label>
-        <input matInput placeholder="Title" />
-      </mat-form-field>
-    </div>
+        <!-- Title column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+          <td mat-cell *matCellDef="let record">
+            <div class="table__cell">{{ record.title }}</div>
+          </td>
+        </ng-container>
 
-    <div class="form__input">
-      <mat-form-field appearance="outline" class="input__field">
-        <mat-label>Reference</mat-label>
-        <input matInput placeholder="Reference" />
-      </mat-form-field>
-    </div>
+        <!-- Reference column -->
+        <ng-container matColumnDef="reference">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Reference</th>
+          <td mat-cell *matCellDef="let record">
+            <div class="table__cell">{{ record.reference }}</div>
+          </td>
+        </ng-container>
 
-    <div class="form__input form__rigth">
-      <mat-form-field appearance="outline" class="input__field">
-        <mat-label>Format</mat-label>
-        <input matInput placeholder="Format" />
-      </mat-form-field>
+        <!-- Format column -->
+        <ng-container matColumnDef="format">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Format</th>
+          <td mat-cell *matCellDef="let record">
+            <div class="table__cell">{{ record.format }}</div>
+          </td>
+        </ng-container>
+
+        <!-- Copies number column -->
+        <ng-container matColumnDef="copies">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Copies</th>
+          <td mat-cell *matCellDef><div class="table__cell">5</div></td>
+        </ng-container>
+
+        <!-- Price column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+          <td mat-cell *matCellDef><div class="table__cell">25.34 €</div></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+
+        <!-- When a column is clicked the console logs its data -->
+        <tr
+          mat-row
+          *matRowDef="let myRowData; columns: columnsToDisplay"
+          (click)="changePlaceholder(myRowData)"
+        ></tr>
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">
+            No data matching the filter "{{ input.value }}"
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
-
   <div class="form__second-row">
     <div class="form__input form__left">
       <mat-form-field appearance="outline" class="input__field">

@@ -13,7 +13,7 @@ import { SelectionModel } from '@angular/cdk/collections'
 })
 
 export class StoreTableComponent implements OnInit {
-  columnsToDisplay: string[] = ['select', 'edit', 'artist', 'title', 'reference', 'format', 'mediaCondition', 'sleeveCondition', 'copies', 'price'];
+  columnsToDisplay: string[] = ['select', 'edit', 'artist', 'title', 'reference', 'format', 'copies', 'price'];
   dataSource: MatTableDataSource<RecordList>;
   selection = new SelectionModel<RecordList>(true, []);
 

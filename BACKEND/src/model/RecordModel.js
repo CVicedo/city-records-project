@@ -5,8 +5,6 @@ const RecordModel = new Schema({
   title: String,
   reference: String,
   format: String,
-  mediaCondition: String,
-  sleeveCondition: String,
   shops: [
     { type: Schema.Types.ObjectId, ref: 'Shop' }
   ]

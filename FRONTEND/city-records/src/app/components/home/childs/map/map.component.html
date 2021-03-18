@@ -1,7 +1,7 @@
 <div class="map-container">
   <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="11">
     <agm-marker
-      *ngFor="let store of stores | async"
+      *ngFor="let store of stores"
       [latitude]="store.coordinates.latitude"
       [longitude]="store.coordinates.longitude"
     >

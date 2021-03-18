@@ -1,3 +1,7 @@
+table {
+  width: 100%;
+}
+
 .form{
   display: flex;
   flex-direction: column;
@@ -6,7 +10,12 @@
   margin-top: 20px;
   margin-bottom: 20px;
 
-  .form__first-row,
+  .form__first-row{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   .form__second-row {
     width: 100%;
   }
@@ -24,6 +33,11 @@
     color:#ffffff;
     background-color: #000000;
   }
+}
+
+.filterInput {
+  width: 100%;
+  border: 1px blue solid;
 }
 
 @media only screen and (min-width: 600px) {
