@@ -2,9 +2,7 @@ const { Router } = require('express');
 const {
   createRecord,
   getData,
-  getRecordsWithStores,
-  getRecordCondition,
-  createRecordCondition
+  getRecordsWithStores
 } = require('../controller/recordsController');
 const {
   getStores,
@@ -32,11 +30,6 @@ function UserRouter() {
   router
     .route('/stores/:shopId')
     .get(getStoresWithrecords);
-
-  router
-    .route('/conditions')
-    .get(getRecordCondition)
-    .post(createRecordCondition);
 
   return router;
 }
