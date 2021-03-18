@@ -13,9 +13,9 @@ import { FormsModule } from '@angular/forms'
 import { MatTableModule } from '@angular/material/table'
 
 import { HomeComponent } from './home.component'
-import { MapComponent } from './childs/map/map.component'
-import { HomeFormComponent } from './childs/home-form/home-form.component'
-import { HomeContentComponent } from './childs/home-content/home-content.component'
+import { MapComponent } from './map/map.component'
+import { HomeFormComponent } from './form/home-form.component'
+import { HomeContentComponent } from './content/home-content.component'
 
 @NgModule({
   declarations: [

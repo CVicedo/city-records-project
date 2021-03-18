@@ -2,8 +2,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { RecordList } from 'src/app/core/models/Records'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
-import { RecordsService } from '../../../../core/services/records.service'
-import { StoreService } from '../../../../core/services/shop.service'
+import { RecordsService } from '../../../core/services/records.service'
+import { StoreService } from '../../../core/services/shop.service'
 import { SelectionModel } from '@angular/cdk/collections'
 
 @Component({
