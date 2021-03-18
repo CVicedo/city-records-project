@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "~11.2.4",
     "@angular/router": "~11.2.4",
     "angular-ng-autocomplete": "^2.0.5",
+    "mapbox-gl": "^2.1.1",
     "ngx-pagination": "^5.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

@@ -1,7 +1,7 @@
 <div class="map-container">
   <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="11">
     <agm-marker
-      *ngFor="let store of stores"
+      *ngFor="let store of storesFiltered | async"
       [latitude]="store.coordinates.latitude"
       [longitude]="store.coordinates.longitude"
     >
@@ -11,4 +11,6 @@
       >
     </agm-marker>
   </agm-map>
+
+  <h4>{{ RecordsService.selectedDisc }}</h4>
 </div>
