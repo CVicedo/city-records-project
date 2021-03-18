@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { StoreService } from '../../../../core/services/shop.service'
+import { Store } from '../../../../core/models/Stores'
 
 @Component({
   selector: 'app-map',
@@ -11,12 +12,15 @@ export class MapComponent implements OnInit {
   latitude = 41.3818
   longitude = 2.1685
 
-  stores = this.StoreService.getStores()
+stores: Store[]
 
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private StoreService: StoreService) { }
+constructor (private StoreService: StoreService) { }
 
-  ngOnInit (): void {
-    this.StoreService.getStores()
-  }
+ngOnInit (): void {
+  this.StoreService.getStores().subscribe(
+    (storesArray) => {
+      this.stores = storesArray
+    }
+  )
+}
 }
