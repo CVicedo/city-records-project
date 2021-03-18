@@ -3,6 +3,7 @@ import { RecordList } from 'src/app/core/models/Records'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
 import { RecordsService } from '../../../../core/services/records.service'
+import { StoreService } from '../../../../core/services/shop.service'
 import { SelectionModel } from '@angular/cdk/collections'
 
 @Component({
@@ -11,12 +12,14 @@ import { SelectionModel } from '@angular/cdk/collections'
   styleUrls: ['./home-form.component.scss']
 })
 export class HomeFormComponent implements OnInit {
-columnsToDisplay: string[] = ['artist', 'title', 'reference', 'format', 'copies', 'price'];
+columnsToDisplay: string[] = ['artist', 'title', 'reference', 'format'];
   dataSource: MatTableDataSource<RecordList>;
   selection = new SelectionModel<RecordList>(true, []);
   showTable :boolean = false;
   rowString: string = ''
   stringToShow: string
+  recordFromForm: string
+  allStores: any
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild('input') Input: ElementRef
@@ -42,12 +45,24 @@ columnsToDisplay: string[] = ['artist', 'title', 'reference', 'format', 'copies'
     this.Input.nativeElement.value = this.stringToShow
   }
 
-  constructor (private RecordsService: RecordsService) { }
+  constructor (
+    public RecordsService: RecordsService,
+    public StoreService: StoreService
+  ) { }
 
   ngOnInit (): void {
     this.RecordsService.getRecords().subscribe((record) => {
       this.dataSource = new MatTableDataSource(record)
       this.dataSource.sort = this.sort
     })
+    this.StoreService.getStores().subscribe((element) => { this.allStores = element })
+
+    this.RecordsService.passRecordIdObservable.subscribe(record => {
+      this.recordFromForm = record
+    })
+  }
+
+  passRecordFromForm (recordFromForm: string) {
+    this.RecordsService.passRecord(recordFromForm)
   }
 }

@@ -11,6 +11,5 @@ export class StoreService {
     return this.http.get<Store[]>(environment.URL_FETCH_STORES)
   }
 
-  // eslint-disable-next-line no-useless-constructor
   constructor (private http: HttpClient) { }
 }

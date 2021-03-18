@@ -50,18 +50,6 @@
           </td>
         </ng-container>
 
-        <!-- Copies number column -->
-        <ng-container matColumnDef="copies">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Copies</th>
-          <td mat-cell *matCellDef><div class="table__cell">5</div></td>
-        </ng-container>
-
-        <!-- Price column -->
-        <ng-container matColumnDef="price">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
-          <td mat-cell *matCellDef><div class="table__cell">25.34 €</div></td>
-        </ng-container>
-
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
 
         <!-- When a column is clicked the console logs its data -->
@@ -69,6 +57,8 @@
           mat-row
           *matRowDef="let myRowData; columns: columnsToDisplay"
           (click)="changePlaceholder(myRowData)"
+          (click)="passRecordFromForm(myRowData._id)"
+          (click)="this.RecordsService.filterStores(myRowData._id, allStores)"
         ></tr>
         <tr class="mat-row" *matNoDataRow>
           <td class="mat-cell" colspan="4">
