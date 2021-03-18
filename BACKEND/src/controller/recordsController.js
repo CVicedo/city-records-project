@@ -1,5 +1,4 @@
 const RecordModel = require('../model/RecordModel');
-const ConditionModel = require('../model/ConditionModel');
 
 function createRecord(req, res) {
   const newRecord = new RecordModel(req.body);
@@ -34,27 +33,6 @@ function getRecordsWithStores(req, res) {
     });
 }
 
-function createRecordCondition(req, res) {
-  const condition = new ConditionModel(req.body);
-
-  condition.save();
-
-  return res.json(condition);
-}
-
-function getRecordCondition(req, res) {
-  const query = {};
-
-  ConditionModel.find(query, (findError, conditionArray) => {
-    if (findError) {
-      res.status(500);
-      res.send('City Records says: Error finding records conditions');
-    } else {
-      res.json(conditionArray);
-    }
-  });
-}
-
 module.exports = {
-  createRecord, getData, getRecordsWithStores, createRecordCondition, getRecordCondition
+  createRecord, getData, getRecordsWithStores
 };
