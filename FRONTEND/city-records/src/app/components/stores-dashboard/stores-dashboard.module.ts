@@ -6,9 +6,8 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatButtonModule } from '@angular/material/button'
 
 import { StoresDashboardComponent } from '../stores-dashboard/stores-dashboard.component'
-import { StoreTableComponent } from './childs/store-table/store-table.component'
-import { StoreDashboardButtonsComponent } from './childs/store-dashboard-buttons/store-dashboard-buttons.component'
-import { AppRoutingModule } from 'src/app/app-routing.module'
+import { StoreTableComponent } from './store-table/store-table.component'
+import { StoreDashboardButtonsComponent } from './store-dashboard-buttons/store-dashboard-buttons.component'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 
 @NgModule({
@@ -23,7 +22,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
     MatTableModule,
     MatPaginatorModule,
     MatButtonModule,
-    AppRoutingModule,
     MatCheckboxModule
 
   ],

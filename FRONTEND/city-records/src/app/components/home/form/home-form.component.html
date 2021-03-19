@@ -1,0 +1,74 @@
+<form class="form">
+  <div class="form__first-row">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Search for an artist, title or reference"
+        (keyup)="applyFilter($event)"
+        (focus)="displayTable(true)"
+        class="table__filterInput"
+        #input
+      />
+    </mat-form-field>
+    <div class="mat-elevation-z8 table">
+      <!-- Filter -->
+      <!-- Table -->
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        *ngIf="showTable"
+        (click)="displayTable(false)"
+        (clickout)="displayTable(false)"
+        matSort
+      >
+        <!-- Artist Column -->
+        <ng-container matColumnDef="artist">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Artist</th>
+          <td mat-cell *matCellDef="let record">
+            <div class="table__cell">{{ record.artist }}</div>
+          </td>
+        </ng-container>
+
+        <!-- Title column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+          <td mat-cell *matCellDef="let record">
+            <div class="table__cell">{{ record.title }}</div>
+          </td>
+        </ng-container>
+
+        <!-- Reference column -->
+        <ng-container matColumnDef="reference">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Reference</th>
+          <td mat-cell *matCellDef="let record">
+            <div class="table__cell">{{ record.reference }}</div>
+          </td>
+        </ng-container>
+
+        <!-- Format column -->
+        <ng-container matColumnDef="format">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Format</th>
+          <td mat-cell *matCellDef="let record">
+            <div class="table__cell">{{ record.format }}</div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+
+        <!-- When a column is clicked the console logs its data -->
+        <tr
+          mat-row
+          *matRowDef="let myRowData; columns: columnsToDisplay"
+          (click)="changePlaceholder(myRowData)"
+          (click)="passRecordFromForm(myRowData._id)"
+          (click)="this.RecordsService.filterStores(myRowData._id, allStores)"
+        ></tr>
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">
+            No data matching the filter "{{ input.value }}"
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</form>

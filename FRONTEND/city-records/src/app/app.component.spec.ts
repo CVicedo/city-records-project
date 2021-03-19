@@ -22,16 +22,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy()
   })
 
-  it('should have as title \'city-records\'', () => {
+  it('should have as title Search online, buy local', () => {
     const fixture = TestBed.createComponent(AppComponent)
     const app = fixture.componentInstance
-    expect(app.title).toEqual('City Records')
+    expect(app.title).toEqual('Search online, buy local')
   })
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent)
     fixture.detectChanges()
     const compiled = fixture.nativeElement
-    expect(compiled.getElementsByClassName('super-header__text').textContent).toContain('Search online, buy local')
+    expect(compiled.querySelector('span')).toContain('Search online, buy local')
   })
 })

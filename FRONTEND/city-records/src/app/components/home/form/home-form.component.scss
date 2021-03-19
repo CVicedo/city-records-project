@@ -33,12 +33,15 @@ table {
     color:#ffffff;
     background-color: #000000;
   }
+
+  .table__filterInput{
+    width: 100%;
+    font-size: large;
+  }
+
 }
 
-.filterInput {
-  width: 100%;
-  border: 1px blue solid;
-}
+
 
 @media only screen and (min-width: 600px) {
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
-import { StoreService } from '../../../../core/services/shop.service'
-import { RecordsService } from '../../../../core/services/records.service'
-import { Store } from '../../../../core/models/Stores'
+import { StoreService } from '../../../core/services/shop.service'
+import { RecordsService } from '../../../core/services/records.service'
+import { Store } from '../../../core/models/Stores'
 
 @Component({
   selector: 'app-map',
