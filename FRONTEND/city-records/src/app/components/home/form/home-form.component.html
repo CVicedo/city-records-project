@@ -1,13 +1,15 @@
 <form class="form">
   <div class="form__first-row">
-    <input
-      matInput
-      placeholder="Filter"
-      (keyup)="applyFilter($event)"
-      (focus)="displayTable(true)"
-      class="table__filterInput"
-      #input
-    />
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Search for an artist, title or reference"
+        (keyup)="applyFilter($event)"
+        (focus)="displayTable(true)"
+        class="table__filterInput"
+        #input
+      />
+    </mat-form-field>
     <div class="mat-elevation-z8 table">
       <!-- Filter -->
       <!-- Table -->
