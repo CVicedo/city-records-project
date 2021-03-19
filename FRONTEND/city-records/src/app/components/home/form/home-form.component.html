@@ -4,7 +4,7 @@
       matInput
       placeholder="Filter"
       (keyup)="applyFilter($event)"
-      (focus)="displayTable()"
+      (focus)="displayTable(true)"
       class="table__filterInput"
       #input
     />
@@ -15,7 +15,8 @@
         mat-table
         [dataSource]="dataSource"
         *ngIf="showTable"
-        (click)="hideTable()"
+        (click)="displayTable(false)"
+        (clickout)="displayTable(false)"
         matSort
       >
         <!-- Artist Column -->
@@ -66,56 +67,6 @@
           </td>
         </tr>
       </table>
-    </div>
-  </div>
-  <div class="form__second-row">
-    <div class="form__input form__left">
-      <mat-form-field appearance="outline" class="input__field">
-        <mat-label>Media Condition</mat-label>
-        <mat-select>
-          <mat-option value="option">Mint (M)</mat-option>
-          <mat-option value="option">Near Mint (NM or M-)</mat-option>
-          <mat-option value="option">Very Good Plus (VG+)</mat-option>
-          <mat-option value="option">Very Good (VG)</mat-option>
-          <mat-option value="option">Good Plus (G+)</mat-option>
-          <mat-option value="option">Good (G)</mat-option>
-          <mat-option value="option">Fair (F)</mat-option>
-          <mat-option value="option">Poor (P)</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-
-    <div class="form__input">
-      <mat-form-field appearance="outline" class="input__field">
-        <mat-label>Sleeve Condition</mat-label>
-        <mat-select>
-          <mat-option value="option">Mint (M)</mat-option>
-          <mat-option value="option">Near Mint (NM or M-)</mat-option>
-          <mat-option value="option">Very Good Plus (VG+)</mat-option>
-          <mat-option value="option">Very Good (VG)</mat-option>
-          <mat-option value="option">Good Plus (G+)</mat-option>
-          <mat-option value="option">Good (G)</mat-option>
-          <mat-option value="option">Fair (F)</mat-option>
-          <mat-option value="option">Poor (P)</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-
-    <div class="form__input">
-      <mat-form-field appearance="outline" class="input__field">
-        <mat-label>City</mat-label>
-        <mat-select>
-          <mat-option value="option">Valencia</mat-option>
-          <mat-option value="option">Barcelona</mat-option>
-          <mat-option value="option">Hamburg</mat-option>
-          <mat-option value="option">Glasgow</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="form__input form__rigth">
-      <button mat-flat-button color="accent" class="input__field form__submit">
-        SEARCH
-      </button>
     </div>
   </div>
 </form>

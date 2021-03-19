@@ -30,12 +30,8 @@ columnsToDisplay: string[] = ['artist', 'title', 'reference', 'format'];
     this.dataSource.filter = filterValue.trim().toLowerCase()
   }
 
-  displayTable () {
-    this.showTable = true
-  }
-
-  hideTable () {
-    this.showTable = false
+  displayTable (boolean) {
+    boolean ? this.showTable = true : this.showTable = false
   }
 
   changePlaceholder (objectToDisplay) {
