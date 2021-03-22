@@ -21,7 +21,9 @@ export class SignInComponent implements OnInit {
     return this.email.hasError('email') ? 'Not a valid email' : ''
   }
 
-  constructor (private router : Router) { }
+  constructor (private router : Router) {
+
+  }
 
   ngOnInit (): void {
   }

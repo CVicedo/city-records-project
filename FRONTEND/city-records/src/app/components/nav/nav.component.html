@@ -1,0 +1,27 @@
+<div class="nav">
+  <div class="nav__info" *ngIf="auth.user$ | async as user">
+    <span class="info__text">Welcome, {{ user.nickname }}</span>
+  </div>
+  <div class="form__input nav__sign-in">
+    <button
+      mat-flat-button
+      color="accent"
+      class="input__field"
+      (click)="loginWithRedirect()"
+      *ngIf="!(auth.isAuthenticated$ | async)"
+    >
+      SIGN IN
+    </button>
+  </div>
+  <div class="form__input nav__sign-out">
+    <button
+      mat-flat-button
+      color="accent"
+      class="input__field"
+      (click)="logOut()"
+      *ngIf="auth.isAuthenticated$ | async"
+    >
+      SIGN OUT
+    </button>
+  </div>
+</div>

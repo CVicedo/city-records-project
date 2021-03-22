@@ -9,12 +9,15 @@ import { StoresDashboardComponent } from '../stores-dashboard/stores-dashboard.c
 import { StoreTableComponent } from './store-table/store-table.component'
 import { StoreDashboardButtonsComponent } from './store-dashboard-buttons/store-dashboard-buttons.component'
 import { MatCheckboxModule } from '@angular/material/checkbox'
+import { NavComponent } from '../nav/nav.component'
+import { AppRoutingModule } from '../../app-routing.module'
 
 @NgModule({
   declarations: [
     StoresDashboardComponent,
     StoreTableComponent,
-    StoreDashboardButtonsComponent
+    StoreDashboardButtonsComponent,
+    NavComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +25,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
     MatTableModule,
     MatPaginatorModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    AppRoutingModule
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -22,6 +22,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component'
 import { SignUpComponent } from './components/sign-up/sign-up.component'
 import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input'
+import { AuthModule } from '@auth0/auth0-angular'
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatInputModule } from '@angular/material/input'
     HowItWorksComponent,
     SignInComponent,
     SignUpComponent
+
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,13 @@ import { MatInputModule } from '@angular/material/input'
     ReactiveFormsModule,
     FormsModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    AuthModule.forRoot({
+      domain: 'projectsblabla.eu.auth0.com',
+      clientId: 'AX2qRp6e3Don5wQO0Un6Oa7cia9ynMbm',
+      cacheLocation: 'localstorage',
+      useRefreshTokens: true
+    })
 
   ],
   providers: [],

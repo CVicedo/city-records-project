@@ -1,0 +1,12 @@
+.nav {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+
+  .nav__info {
+    align-self: center;
+    margin-right: 20px;
+  }
+
+}

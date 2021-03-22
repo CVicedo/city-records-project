@@ -11,4 +11,12 @@
       >
     </agm-marker>
   </agm-map>
+
+  <button
+    *ngIf="auth.isAuthenticated$ | async"
+    CLASS="map-container__button"
+    routerLink="/store"
+  >
+    GO TO STORES DASHBOARD
+  </button>
 </div>
