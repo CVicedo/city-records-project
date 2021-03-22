@@ -66,4 +66,8 @@ export class StoreTableComponent implements OnInit {
       this.dataSource.paginator = this.paginator
     })
   }
+
+  AfterViewInit () {
+    this.dataSource.sort = this.sort
+  }
 }

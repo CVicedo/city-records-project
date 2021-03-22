@@ -1,0 +1,56 @@
+<div class="sign-up">
+  <span class="sign-up__text">
+    <h2>Sign Up</h2>
+    <p>Create an account if your shop is not registered in City Records yet.</p>
+  </span>
+
+  <!-- Store Name -->
+  <form class="sign-up__form">
+    <mat-form-field appearance="outline">
+      <mat-label>Store Name</mat-label>
+      <input matInput placeholder="Enter the store name" />
+    </mat-form-field>
+
+    <!-- Address -->
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Enter the store adress" />
+    </mat-form-field>
+
+    <!-- User Name -->
+    <mat-form-field appearance="outline">
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="Enter your user name" />
+    </mat-form-field>
+
+    <!-- E-Mail -->
+    <mat-form-field appearance="outline">
+      <mat-label>E-Mail</mat-label>
+      <input
+        matInput
+        placeholder="Enter your e-mail"
+        [formControl]="email"
+        required
+      />
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <!-- Password -->
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!-- Submit -->
+    <button mat-flat-button color="accent" class="form__submit">SIGN UP</button>
+  </form>
+</div>

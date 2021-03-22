@@ -1,0 +1,24 @@
+.sign-in {
+  width: 80%;
+  margin: auto;
+  background: #ffffff;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  margin-top: 2%;
+
+  .sign-in__form,
+  .sign-in__text{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+  }
+
+  .form__submit {
+    background-color: #000000;
+    color: #ffffff;
+    width: 50%;
+    align-self: flex-end;
+  }
+}
+
