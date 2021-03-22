@@ -17,13 +17,20 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatSortModule } from '@angular/material/sort'
 import { MatButtonModule } from '@angular/material/button'
 import { MatFormFieldModule } from '@angular/material/form-field'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'
+import { SignInComponent } from './components/sign-in/sign-in.component'
+import { SignUpComponent } from './components/sign-up/sign-up.component'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HowItWorksComponent
+    HowItWorksComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,12 @@ import { MatFormFieldModule } from '@angular/material/form-field'
     MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatIconModule,
+    MatInputModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

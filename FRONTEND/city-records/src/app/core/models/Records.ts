@@ -4,6 +4,5 @@ export interface RecordList {
   title: string,
   reference: string,
   format: string,
-  mediaCondition: string,
-  sleeveCondition: string
+  shops: string[]
 }
