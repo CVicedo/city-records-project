@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { StoreService } from '../../../core/services/shop.service'
 import { RecordsService } from '../../../core/services/records.service'
 import { Store } from '../../../core/models/Stores'
+import { AuthService } from '@auth0/auth0-angular'
 
 @Component({
   selector: 'app-map',
@@ -19,7 +20,8 @@ storesFiltered = this.RecordsService.storesFiltered
 
 constructor (
   private StoreService: StoreService,
-  public RecordsService: RecordsService
+  public RecordsService: RecordsService,
+  public auth: AuthService
 ) { }
 
 ngOnInit (): void {

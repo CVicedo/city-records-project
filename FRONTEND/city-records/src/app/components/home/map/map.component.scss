@@ -4,12 +4,23 @@ agm-map{
 
 .map-container{
   margin-top: -51px;
+  display: flex;
+  flex-direction: column;
 
   .storeName {
     font-size: 110%;
     font-weight: bold;
   }
+  .map-container__button{
+    width: 30%;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    align-self: center;
+    color: #ff0000;
+    cursor: pointer;
+  }
 }
+
 
 @media only screen and (min-width: 600px){
 

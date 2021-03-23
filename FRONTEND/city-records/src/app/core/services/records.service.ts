@@ -25,8 +25,6 @@ export class RecordsService {
 
   filterStores (recordId, stores) {
     const acumulator: any = []
-    // eslint-disable-next-line no-debugger
-    debugger
     stores.map((element) => {
       element.records.map((elementTwo) => {
         if (elementTwo.record === recordId) {
@@ -36,7 +34,6 @@ export class RecordsService {
       })
       return acumulator
     })
-    console.log(acumulator)
     this.storesFiltered.next(acumulator)
   }
 

@@ -3,7 +3,7 @@
 
   <input matInput placeholder="Filter" (keyup)="applyFilter($event)" #input />
 
-  <table mat-table [dataSource]="dataSource" matSort>
+  <table mat-table [dataSource]="recordsToShow" matSort>
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
       <!-- Checkbox header -->
@@ -106,3 +106,16 @@
   <!-- Pagination -->
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>
+<div *ngFor="let store of allStores">
+  <li>{{ store.storeName }}</li>
+</div>
+<div class="nav__info" *ngIf="auth.user$ | async as user">
+  <span class="info__text"> {{ user.email }}</span>
+</div>
+<span
+  >Això és user: {{ this.user }} i això allStores: {{ this.allStores }}</span
+>
+<button (click)="filterInventoryRecords(this.user, this.allStores)">
+  APRETA!
+</button>
+<br />
