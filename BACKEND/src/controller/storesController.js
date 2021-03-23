@@ -2,16 +2,15 @@ const ShopModel = require('../model/ShopModel');
 const Store = require('../model/ShopModel');
 
 function getStores(req, res) {
-  const query = {};
-
-  Store.find(query, (findError, storesArray) => {
-    if (findError) {
-      res.status(500);
-      res.send('City Records says: Error finding stores');
-    } else {
-      res.json(storesArray);
-    }
-  });
+  ShopModel.find({})
+    .populate('records.record').exec((err, shop) => {
+      if (err) {
+        res.status(500);
+        res.send('City Records says: Error finding stores');
+      } else {
+        res.json(shop);
+      }
+    });
 }
 
 function createStore(req, res) {

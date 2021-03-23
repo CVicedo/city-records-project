@@ -15,6 +15,8 @@ export class RecordsService {
   passRecordIdObservable = this.passRecordId.asObservable();
 
   passRecord (selectedDisc: string) {
+    // eslint-disable-next-line no-debugger
+    debugger
     this.selectedDisc = selectedDisc
     this.passRecordId.next(selectedDisc)
   }
@@ -27,7 +29,7 @@ export class RecordsService {
     const acumulator: any = []
     stores.map((element) => {
       element.records.map((elementTwo) => {
-        if (elementTwo.record === recordId) {
+        if (elementTwo.record._id === recordId) {
           acumulator.push(element)
         }
         return acumulator

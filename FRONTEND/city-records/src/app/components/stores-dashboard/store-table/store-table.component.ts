@@ -56,8 +56,6 @@ export class StoreTableComponent implements OnInit {
       }
       return this.shopLogged
     })
-
-    console.log(this.shopLogged)
   }
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -104,10 +102,9 @@ export class StoreTableComponent implements OnInit {
           this.allStores = stores
           const records = stores[0].records.reduce((acc, { record }) => [...acc, record], [])
           this.recordsToShow = new MatTableDataSource(records)
-          console.log(this.recordsToShow.data)
         })
       )
-      .subscribe(console.log)
+      .subscribe()
 
     // Get the user's e-mail
     this.auth.user$.subscribe((element) => { this.user = element.email })

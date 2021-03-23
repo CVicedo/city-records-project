@@ -25,6 +25,8 @@ constructor (
 ) { }
 
 ngOnInit (): void {
+  // eslint-disable-next-line no-debugger
+  debugger
   this.StoreService.getStores().subscribe(
     (storesArray) => {
       this.stores = storesArray
