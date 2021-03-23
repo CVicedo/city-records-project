@@ -3,6 +3,7 @@ export interface Store {
   storeName: string,
   adress: string,
   ownerName: string,
+  records:any[],
   email: string,
   coordinates: {
     latitude: number,

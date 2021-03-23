@@ -5,6 +5,9 @@ import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
 import { RecordList } from 'src/app/core/models/Records'
 import { SelectionModel } from '@angular/cdk/collections'
+import { StoreService } from '../../../core/services/shop.service'
+import { AuthService } from '@auth0/auth0-angular'
+import { tap, switchMap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-store-table',
@@ -16,6 +19,12 @@ export class StoreTableComponent implements OnInit {
   columnsToDisplay: string[] = ['select', 'edit', 'artist', 'title', 'reference', 'format', 'copies', 'price'];
   dataSource: MatTableDataSource<RecordList>;
   selection = new SelectionModel<RecordList>(true, []);
+  allStores: any
+  user: any
+  records: any
+  recordsToShow: MatTableDataSource<RecordList>;
+  shopLogged: any
+  shop: any
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected () {
@@ -39,6 +48,18 @@ export class StoreTableComponent implements OnInit {
     return (`${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.reference}`)
   }
 
+  /** Filters records array in order to show only the ones in the record stor inventary */
+  filterInventoryRecords (email, stores) {
+    stores.map((element) => {
+      if (element.email === email) {
+        this.shopLogged = element
+      }
+      return this.shopLogged
+    })
+
+    console.log(this.shopLogged)
+  }
+
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
@@ -57,17 +78,40 @@ export class StoreTableComponent implements OnInit {
     console.log('Row Clicked: ', row)
   }
 
-  constructor (private RecordsService: RecordsService) { }
+  constructor (
+    private RecordsService: RecordsService,
+    private StoreService: StoreService,
+    public auth: AuthService
+  ) { }
 
   ngOnInit (): void {
+    // eslint-disable-next-line no-debugger
+    debugger
     this.RecordsService.getRecords().subscribe((record) => {
       this.dataSource = new MatTableDataSource(record)
       this.dataSource.sort = this.sort
       this.dataSource.paginator = this.paginator
     })
-  }
 
-  AfterViewInit () {
-    this.dataSource.sort = this.sort
+    // Get the complete stores array
+    this.auth.user$
+      .pipe(
+        tap(user => { this.user = user.email }),
+        switchMap(user => this.StoreService.getStoresByUser(user)),
+        tap((stores) => {
+          // eslint-disable-next-line no-debugger
+          debugger
+          this.allStores = stores
+          const records = stores[0].records.reduce((acc, { record }) => [...acc, record], [])
+          this.recordsToShow = new MatTableDataSource(records)
+          console.log(this.recordsToShow.data)
+        })
+      )
+      .subscribe(console.log)
+
+    // Get the user's e-mail
+    this.auth.user$.subscribe((element) => { this.user = element.email })
+
+    this.filterInventoryRecords(this.user, this.allStores)
   }
 }
