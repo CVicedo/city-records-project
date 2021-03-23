@@ -9,12 +9,15 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs'
 })
 export class RecordsService {
   selectedDisc: string
-  storesFiltered= new BehaviorSubject([])
+  storesFiltered = new BehaviorSubject([])
+  isChecked = new BehaviorSubject(null)
 
   private passRecordId = new Subject<string>();
   passRecordIdObservable = this.passRecordId.asObservable();
 
   passRecord (selectedDisc: string) {
+    // eslint-disable-next-line no-debugger
+    debugger
     this.selectedDisc = selectedDisc
     this.passRecordId.next(selectedDisc)
   }
@@ -27,7 +30,7 @@ export class RecordsService {
     const acumulator: any = []
     stores.map((element) => {
       element.records.map((elementTwo) => {
-        if (elementTwo.record === recordId) {
+        if (elementTwo.record._id === recordId) {
           acumulator.push(element)
         }
         return acumulator
@@ -37,5 +40,11 @@ export class RecordsService {
     this.storesFiltered.next(acumulator)
   }
 
-  constructor (private http: HttpClient) { }
+  switchRecordsDataSource () {
+    this.isChecked.next(!this.isChecked.getValue())
+  }
+
+  constructor (
+    private http: HttpClient
+  ) { }
 }
