@@ -59,7 +59,6 @@ import { AuthModule } from '@auth0/auth0-angular'
       cacheLocation: 'localstorage',
       useRefreshTokens: true
     })
-
   ],
   providers: [],
   bootstrap: [AppComponent]

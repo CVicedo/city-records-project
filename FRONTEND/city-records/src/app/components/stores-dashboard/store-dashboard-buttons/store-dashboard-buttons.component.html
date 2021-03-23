@@ -21,12 +21,15 @@
       </button>
     </div>
   </div>
+  <div class="form_text">
+    <span *ngIf="isChecked | async">All records in database</span>
+    <span class="cell_text" *ngIf="!(isChecked | async)">Your Records</span>
+  </div>
   <div class="store-dashboard-buttons__rigth-buttons">
-    <div class="form__input store-dashboard-buttons__button">
-      <button mat-flat-button color="accent" class="input__field">
-        ADD OR UPDATE
-      </button>
-    </div>
+    <label class="switch">
+      <input type="checkbox" (click)="callService()" />
+      <span class="slider round"></span>
+    </label>
     <div class="form__input store-dashboard-buttons__button">
       <button mat-flat-button color="accent" class="input__field">
         BULK REMOVE

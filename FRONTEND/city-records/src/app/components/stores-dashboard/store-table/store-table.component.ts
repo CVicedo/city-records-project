@@ -21,10 +21,9 @@ export class StoreTableComponent implements OnInit {
   selection = new SelectionModel<RecordList>(true, []);
   allStores: any
   user: any
-  records: any
   recordsToShow: MatTableDataSource<RecordList>;
   shopLogged: any
-  shop: any
+  isChecked = this.RecordsService.isChecked
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected () {
@@ -83,8 +82,6 @@ export class StoreTableComponent implements OnInit {
   ) { }
 
   ngOnInit (): void {
-    // eslint-disable-next-line no-debugger
-    debugger
     this.RecordsService.getRecords().subscribe((record) => {
       this.dataSource = new MatTableDataSource(record)
       this.dataSource.sort = this.sort
@@ -97,8 +94,6 @@ export class StoreTableComponent implements OnInit {
         tap(user => { this.user = user.email }),
         switchMap(user => this.StoreService.getStoresByUser(user)),
         tap((stores) => {
-          // eslint-disable-next-line no-debugger
-          debugger
           this.allStores = stores
           const records = stores[0].records.reduce((acc, { record }) => [...acc, record], [])
           this.recordsToShow = new MatTableDataSource(records)

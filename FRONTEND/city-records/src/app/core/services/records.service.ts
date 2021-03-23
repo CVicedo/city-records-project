@@ -9,7 +9,8 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs'
 })
 export class RecordsService {
   selectedDisc: string
-  storesFiltered= new BehaviorSubject([])
+  storesFiltered = new BehaviorSubject([])
+  isChecked = new BehaviorSubject(null)
 
   private passRecordId = new Subject<string>();
   passRecordIdObservable = this.passRecordId.asObservable();
@@ -39,5 +40,11 @@ export class RecordsService {
     this.storesFiltered.next(acumulator)
   }
 
-  constructor (private http: HttpClient) { }
+  switchRecordsDataSource () {
+    this.isChecked.next(!this.isChecked.getValue())
+  }
+
+  constructor (
+    private http: HttpClient
+  ) { }
 }
