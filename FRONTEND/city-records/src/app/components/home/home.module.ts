@@ -12,6 +12,7 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete'
 import { FormsModule } from '@angular/forms'
 import { MatTableModule } from '@angular/material/table'
 import { MatIconModule } from '@angular/material/icon'
+import { AppRoutingModule } from '../../app-routing.module'
 
 import { HomeComponent } from './home.component'
 import { MapComponent } from './map/map.component'
@@ -39,7 +40,8 @@ import { HomeContentComponent } from './content/home-content.component'
     AutocompleteLibModule,
     FormsModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    AppRoutingModule
   ]
 
 })
