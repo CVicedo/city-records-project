@@ -1,6 +1,32 @@
 <div class="header-container">
   <div class="header-container__super-header">
     <span class="super-header__text">Search online, buy local</span>
+
+    <div class="super-header__nav">
+      <div class="nav__info" *ngIf="auth.user$ | async as user">
+        <span class="info__text">Welcome, {{ user.nickname }}</span>
+      </div>
+
+      <!-- Login and Log out -->
+      <div class="nav__sign-in">
+        <button
+          class="input__field"
+          (click)="loginWithRedirect()"
+          *ngIf="!(auth.isAuthenticated$ | async)"
+        >
+          SIGN IN
+        </button>
+      </div>
+      <div class="nav__sign-out">
+        <button
+          class="input__field"
+          (click)="logOut()"
+          *ngIf="auth.isAuthenticated$ | async"
+        >
+          SIGN OUT
+        </button>
+      </div>
+    </div>
   </div>
   <img
     src="'../../../../assets/images/city-records-logo-black.png"

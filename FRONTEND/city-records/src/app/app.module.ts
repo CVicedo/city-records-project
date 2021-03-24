@@ -11,7 +11,7 @@ import { HeaderComponent } from './components/header/header.component'
 import { FooterComponent } from './components/footer/footer.component'
 import { HomeModule } from './components/home/home.module'
 import { StoresDashboardModule } from './components/stores-dashboard/stores-dashboard.module'
-import { HowItWorksComponent } from './components/info/how-it-works/how-it-works.component'
+import { HowItWorksComponent } from './components/how-it-works/how-it-works.component'
 
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatSortModule } from '@angular/material/sort'

@@ -11,13 +11,12 @@ export class RecordsService {
   selectedDisc: string
   storesFiltered = new BehaviorSubject([])
   isChecked = new BehaviorSubject(null)
+  allShopsMapDataSource = new BehaviorSubject(true)
 
   private passRecordId = new Subject<string>();
   passRecordIdObservable = this.passRecordId.asObservable();
 
   passRecord (selectedDisc: string) {
-    // eslint-disable-next-line no-debugger
-    debugger
     this.selectedDisc = selectedDisc
     this.passRecordId.next(selectedDisc)
   }
@@ -45,7 +44,12 @@ export class RecordsService {
   }
 
   createRecord (record: RecordList) {
-    return this.http.post<RecordList[]>('http://localhost:5000/api/records', record).subscribe()
+    return this.http.post<RecordList[]>(environment.URL_FETCH_RECORDS, record).subscribe()
+  }
+
+  changeMapDataSource () {
+    this.allShopsMapDataSource.next(this.allShopsMapDataSource ? !this.allShopsMapDataSource.getValue() : !this.allShopsMapDataSource.getValue())
+    console.log('Service ', this.allShopsMapDataSource.getValue())
   }
 
   constructor (
