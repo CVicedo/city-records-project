@@ -61,12 +61,17 @@ export class StoreTableComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   /* Filters row taking all the row data as a string */
+  // TODO: refactor in order to avoid duplicated code
   applyFilter (event: Event) {
     const filterValue = (event.target as HTMLInputElement).value
     this.dataSource.filter = filterValue.trim().toLowerCase()
+    this.recordsToShow.filter = filterValue.trim().toLowerCase()
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage()
+    }
+    if (this.recordsToShow.paginator) {
+      this.recordsToShow.paginator.firstPage()
     }
   }
 
@@ -97,6 +102,8 @@ export class StoreTableComponent implements OnInit {
           this.allStores = stores
           const records = stores[0].records.reduce((acc, { record }) => [...acc, record], [])
           this.recordsToShow = new MatTableDataSource(records)
+          this.recordsToShow.sort = this.sort
+          this.recordsToShow.paginator = this.paginator
         })
       )
       .subscribe()
