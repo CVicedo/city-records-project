@@ -1,0 +1,79 @@
+<div class="sign-in">
+  <div class="button-container">
+    <button
+      mat-flat-button
+      routerLink="/store"
+      color="accent"
+      class="button-container__button"
+    >
+      BACK TO DASHBOARD
+    </button>
+  </div>
+  <!-- Submit -->
+
+  <span class="sign-in__text">
+    <h2>Create a record in database</h2>
+    <p>
+      If you need to create a record which doesn't exists in database already,
+      please fill in the form
+    </p>
+  </span>
+  <form
+    class="sign-in__form"
+    [formGroup]="createRecordFormGroup"
+    (ngSubmit)="onSubmit()"
+  >
+    <!-- Artist -->
+    <mat-form-field appearance="outline">
+      <mat-label>Artist</mat-label>
+      <input
+        matInput
+        placeholder="Enter artist"
+        formControlName="artist"
+        required
+        ngModel
+      />
+    </mat-form-field>
+
+    <!-- Title -->
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        placeholder="Enter title"
+        formControlName="title"
+        required
+        ngModel
+      />
+    </mat-form-field>
+
+    <!-- Reference -->
+    <mat-form-field appearance="outline">
+      <mat-label>Reference</mat-label>
+      <input
+        matInput
+        placeholder="Enter Reference"
+        formControlName="reference"
+        required
+        ngModel
+      />
+    </mat-form-field>
+
+    <!-- Format -->
+    <mat-form-field appearance="outline">
+      <mat-label>Format</mat-label>
+      <input
+        matInput
+        placeholder="Enter format"
+        formControlName="format"
+        required
+        ngModel
+      />
+    </mat-form-field>
+
+    <!-- Submit -->
+    <button mat-flat-button type="submit" color="accent" class="form__submit">
+      SEND
+    </button>
+  </form>
+</div>

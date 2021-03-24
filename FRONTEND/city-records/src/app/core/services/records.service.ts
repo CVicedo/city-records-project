@@ -44,6 +44,10 @@ export class RecordsService {
     this.isChecked.next(!this.isChecked.getValue())
   }
 
+  createRecord (record: RecordList) {
+    return this.http.post<RecordList[]>('http://localhost:5000/api/records', record).subscribe()
+  }
+
   constructor (
     private http: HttpClient
   ) { }

@@ -18,11 +18,12 @@ import { MatSortModule } from '@angular/material/sort'
 import { MatButtonModule } from '@angular/material/button'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
-import { SignInComponent } from './components/sign-in/sign-in.component'
+import { PostRecordsForm } from './components/post-records-form/post-records-form.component'
 import { SignUpComponent } from './components/sign-up/sign-up.component'
 import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input'
 import { AuthModule } from '@auth0/auth0-angular'
+import { NotFoundComponent } from './components/not-found/not-found.component'
 
 @NgModule({
   declarations: [
@@ -30,8 +31,9 @@ import { AuthModule } from '@auth0/auth0-angular'
     HeaderComponent,
     FooterComponent,
     HowItWorksComponent,
-    SignInComponent,
-    SignUpComponent
+    PostRecordsForm,
+    SignUpComponent,
+    NotFoundComponent
 
   ],
   imports: [
@@ -58,7 +60,8 @@ import { AuthModule } from '@auth0/auth0-angular'
       clientId: 'AX2qRp6e3Don5wQO0Un6Oa7cia9ynMbm',
       cacheLocation: 'localstorage',
       useRefreshTokens: true
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
