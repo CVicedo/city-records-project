@@ -26,10 +26,13 @@
     <span class="cell_text" *ngIf="!(isChecked | async)">Your Records</span>
   </div>
   <div class="store-dashboard-buttons__rigth-buttons">
+    <!-- Switch that changes dataSource in store table -->
     <label class="switch">
       <input type="checkbox" (click)="callService()" />
       <span class="slider round"></span>
     </label>
+
+    <!-- Button create record -->
     <div class="form__input store-dashboard-buttons__button">
       <button
         mat-flat-button
@@ -38,11 +41,6 @@
         routerLink="/create-record"
       >
         CREATE RECORD
-      </button>
-    </div>
-    <div class="form__input store-dashboard-buttons__button">
-      <button mat-flat-button color="accent" class="input__field">
-        REMOVE SELECTED
       </button>
     </div>
   </div>
