@@ -9,8 +9,6 @@ import { map } from 'rxjs/operators'
 })
 export class StoreService {
   getStores () {
-    // eslint-disable-next-line no-debugger
-    debugger
     return this.http.get<Store[]>(environment.URL_FETCH_STORES)
   }
 

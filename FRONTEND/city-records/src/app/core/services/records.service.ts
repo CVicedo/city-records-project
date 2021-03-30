@@ -25,13 +25,17 @@ export class RecordsService {
     return this.http.get<RecordList[]>(environment.URL_FETCH_RECORDS)
   }
 
+
   // TODO: refactor. May be can it be solved by populating?
+
+  // Find stores wich have a specific record in it's inventory
+
   filterStores (recordId, stores) {
     const acumulator: any = []
-    stores.map((element) => {
-      element.records.map((elementTwo) => {
-        if (elementTwo.record._id === recordId) {
-          acumulator.push(element)
+    stores.map((store) => {
+      store.records.map((record) => {
+        if (record.record._id === recordId) {
+          acumulator.push(store)
         }
         return acumulator
       })
@@ -40,6 +44,7 @@ export class RecordsService {
     this.storesFiltered.next(acumulator)
   }
 
+  // Switch value on isChecked in order to switch the store table datasource
   switchRecordsDataSource () {
     this.isChecked.next(!this.isChecked.getValue())
   }
