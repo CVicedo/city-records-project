@@ -42,6 +42,7 @@ Use git to directly clone the City Records repository:
 ## Installation
 
 To install the dependencies, open the backend and frontend folders and run in terminal
+
 ```$ npm install```
 
 ## Under construction
