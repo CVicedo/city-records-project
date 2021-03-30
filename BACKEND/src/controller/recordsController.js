@@ -1,5 +1,6 @@
 const RecordModel = require('../model/RecordModel');
 
+// Creates record in record collection w/o assaigning it to any store
 function createRecord(req, res) {
   const newRecord = new RecordModel(req.body);
 
@@ -8,6 +9,7 @@ function createRecord(req, res) {
   return res.json(newRecord);
 }
 
+// Fetch all records data w/o populate
 function getData(req, res) {
   const query = {};
 
@@ -21,6 +23,7 @@ function getData(req, res) {
   });
 }
 
+// Fetch one record populating it's stores
 function getRecordsWithStores(req, res) {
   return RecordModel.findById(req.params.recordId)
     .populate('shops').exec((err, record) => {

@@ -25,6 +25,7 @@ export class RecordsService {
     return this.http.get<RecordList[]>(environment.URL_FETCH_RECORDS)
   }
 
+  // TODO: refactor. May be can it be solved by populating?
   filterStores (recordId, stores) {
     const acumulator: any = []
     stores.map((element) => {
