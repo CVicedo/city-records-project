@@ -25,7 +25,6 @@ export class RecordsService {
     return this.http.get<RecordList[]>(environment.URL_FETCH_RECORDS)
   }
 
-
   // TODO: refactor. May be can it be solved by populating?
 
   // Find stores wich have a specific record in it's inventory

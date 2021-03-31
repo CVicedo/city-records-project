@@ -10,10 +10,11 @@ const UserRouter = require('./src/router/userRouter');
 
 const app = express();
 const port = process.env.PORT || 5000;
+const url = process.env.DB_URL;
 
 app.use(express.json());
 
-connect('mongodb+srv://admin:admin@cluster0.ipfsx.mongodb.net/records', { newUrlParser: true, useUnifiedTopology: true });
+connect(url, { newUrlParser: true, useUnifiedTopology: true });
 
 app.use(morgan('dev'));
 
