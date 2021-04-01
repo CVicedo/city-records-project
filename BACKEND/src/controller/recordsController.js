@@ -36,6 +36,19 @@ function getRecordsWithStores(req, res) {
     });
 }
 
+// Get only the last record added to data base
+function getLastRecord(req, res) {
+  return RecordModel.find().sort({ $natural: -1 }).limit(1)
+    .exec((err, record) => {
+      if (err) {
+        res.status(500);
+        res.send('Error found');
+      } else {
+        res.json(record);
+      }
+    });
+}
+
 module.exports = {
-  createRecord, getData, getRecordsWithStores
+  createRecord, getData, getRecordsWithStores, getLastRecord
 };

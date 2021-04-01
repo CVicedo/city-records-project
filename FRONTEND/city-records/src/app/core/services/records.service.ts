@@ -25,6 +25,10 @@ export class RecordsService {
     return this.http.get<RecordList[]>(environment.URL_FETCH_RECORDS)
   }
 
+  getLastRecord (): Observable<RecordList[]> {
+    return this.http.get<RecordList[]>(environment.URL_FETCH_LAST_RECORD)
+  }
+
   // TODO: refactor. May be can it be solved by populating?
 
   // Find stores wich have a specific record in it's inventory

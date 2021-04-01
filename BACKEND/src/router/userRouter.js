@@ -2,7 +2,8 @@ const { Router } = require('express');
 const {
   createRecord,
   getData,
-  getRecordsWithStores
+  getRecordsWithStores,
+  getLastRecord
 } = require('../controller/recordsController');
 const {
   getStores,
@@ -21,6 +22,10 @@ function UserRouter() {
   router
     .route('/record/:recordId')
     .get(getRecordsWithStores);
+
+  router
+    .route('/last-record')
+    .get(getLastRecord);
 
   router
     .route('/stores')
